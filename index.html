@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Beautiful Angel ✨💖</title>
+    <style>
+        /* --- BRAND NEW LUXURY PASTEL COLOR PALETTE --- */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #ffeef2 0%, #f4e8ff 50%, #e8f0fe 100%);
+            --glass-white: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --luxury-rose: #d65a7f;
+            --deep-plum: #4a2840;
+            --pastel-pink: #ffb3c6;
+            --electric-heart: #ff477e;
+            --gold-glow: #ffd700;
+            --premium-shadow: 0 20px 50px rgba(214, 90, 127, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', '-apple-system', 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: #f5e6eb;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- STRICT MOBILE VIEW WRAPPER --- */
+        .viewport-wrapper {
+            width: 100%;
+            height: 100%;
+            max-width: 430px;
+            max-height: 880px;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-gradient);
+            box-shadow: 0 25px 60px rgba(74, 40, 64, 0.18);
+            border-radius: 44px;
+            border: 10px solid #ffffff;
+        }
+
+        @media (max-width: 440px) {
+            .viewport-wrapper {
+                border-radius: 0px;
+                border: none;
+            }
+        }
+
+        /* --- SPARKLING GLITTER BACKGROUND ENGINE --- */
+        .sparkle-canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .glitter-particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: elegantFloat 6s ease-in-out infinite alternate;
+        }
+
+        /* --- ADVANCED TRANSITION STRUCTURE (PAGE AFTER PAGE) --- */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 30px;
+            opacity: 0;
+            transform: translateY(100%) scale(0.95);
+            filter: blur(10px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, filter 0.5s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+            z-index: 10;
+            pointer-events: auto;
+        }
+
+        .page.previous {
+            opacity: 0;
+            transform: translateY(-100%) scale(0.95);
+            filter: blur(5px);
+        }
+
+        /* --- LUXURY HEADINGS --- */
+        .header-wrapper {
+            text-align: center;
+            width: 100%;
+            z-index: 5;
+        }
+        .luxury-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--deep-plum);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .luxury-subtitle {
+            font-size: 0.85rem;
+            color: var(--luxury-rose);
+            margin-top: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* --- GLASSMORPHISM CONTROLLER BUTTONS --- */
+        .footer-action {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 20;
+            margin-top: auto;
+        }
+        .action-pill {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--deep-plum);
+            border: 2px solid var(--glass-border);
+            padding: 15px 40px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 100px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(214, 90, 127, 0.12);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+        .action-pill:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* --- FLOATING CONTROLS --- */
+        .music-pill {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 100;
+            background: var(--glass-white);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .music-pill.playing {
+            animation: smoothPulse 2s infinite alternate;
+        }
+
+        /* =========================================
+           PAGE 1: GLASS CARD & HALO HEART
+        ============================================ */
+        .glass-hero-card {
+            background: var(--glass-white);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 35px 25px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--premium-shadow);
+            margin: auto 0;
+        }
+        .glass-hero-card h1 {
+            font-size: 2.1rem;
+            color: var(--deep-plum);
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        .glass-hero-card p {
+            font-size: 0.95rem;
+            color: #6a4c5e;
+            line-height: 1.5;
+        }
+        .halo-heart-container {
+            width: 100px;
+            height: 100px;
+            margin: 25px auto 5px auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart-element {
+            font-size: 3.5rem;
+            z-index: 2;
+            animation: heavyPulse 1.2s ease-in-out infinite alternate;
+        }
+        .halo-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed var(--pastel-pink);
+            animation: rotateClockwise 8s linear infinite;
+        }
+
+        /* =========================================
+           PAGE 2: DIAGONAL BALLOON CLOUD
+        ============================================ */
+        .balloon-cloud-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin: auto 0;
+            padding: 5px;
+        }
+        .cloud-balloon {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            position: relative;
+            cursor: pointer;
+            box-shadow: inset -8px -8px 20px rgba(0,0,0,0.12), 0 12px 24px rgba(214,90,127,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+        }
+        .cloud-balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 8px solid rgba(0,0,0,0.1);
+        }
+        .cloud-balloon.popped {
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease-out;
+        }
+
+        /* =========================================
+           PAGE 3 & 4: NEUMORPHIC CAKE STAND
+        ============================================ */
+        .bakery-theater {
+            position: relative;
+            width: 260px;
+            height: 240px;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .pastry-pedestal {
+            width: 100%;
+            height: 14px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            z-index: 0;
+        }
+        .sculpted-tier {
+            background: linear-gradient(180deg, #ffffff 0%, #fff0f3 100%);
+            border-radius: 16px 16px 4px 4px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(214, 90, 127, 0.06);
+        }
+        .layer-base { width: 210px; height: 60px; z-index: 1; }
+        .layer-mid { width: 160px; height: 50px; z-index: 2; margin-bottom: -2px; }
+        .layer-top { width: 110px; height: 40px; z-index: 3; margin-bottom: -2px; }
+        
+        .velvet-drip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 14px;
+            background: #ff758f;
+            border-radius: 0 0 8px 8px;
+        }
+        .glow-wick {
+            width: 8px;
+            height: 25px;
+            background: linear-gradient(90deg, #ffccd5 0%, #fff 100%);
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 4px;
+            z-index: 4;
+        }
+        .magical-flame {
+            position: absolute;
+            width: 14px;
+            height: 22px;
+            background: radial-gradient(circle, #ffca3a 0%, #ff595e 100%);
+            border-radius: 50% 50% 30% 30%;
+            top: -24px;
+            left: -3px;
+            box-shadow: 0 0 15px #ffca3a;
+            animation: flameFlicker 0.6s infinite alternate;
+        }
+
+        /* Slicing Framework */
+        .slice-workspace {
+            position: absolute;
+            bottom: 15px;
+            width: 240px;
+            height: 130px;
+            display: flex;
+            justify-content: center;
+        }
+        .slice-half {
+            width: 120px;
+            height: 120px;
+            background: white;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slice-half.left {
+            border-radius: 20px 0 0 20px;
+            border-right: 2px dashed #ffccd5;
+        }
+        .slice-half.right {
+            border-radius: 0 20px 20px 0;
+            border-left: 2px dashed #ffccd5;
+        }
+        .frosting-line {
+            position: absolute;
+            width: 100%;
+            height: 12px;
+            background: #ff85a1;
+            top: 45%;
+        }
+        .slice-half h3 {
+            position: absolute;
+            width: 240px;
+            bottom: 20px;
+            color: var(--deep-plum);
+            font-size: 1.05rem;
+            font-weight: 800;
+            }
+        .slice-half.left h3 { left: 20px; text-align: left; }
+        .slice-half.right h3 { left: -140px; text-align: right; }
+
+        .fountain-core {
+            position: absolute;
+            font-size: 3.5rem;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 10;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s;
+        }
+
+        .interactive-cutter {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 2.5rem;
+            z-index: 35;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        /* Execution State Styles */
+        .cut-executed .interactive-cutter {
+            animation: luxurySliceMotion 1.2s forwards ease-in-out;
+        }
+        .cut-executed .slice-half.left { transform: translateX(-40px) rotate(-10deg); }
+        .cut-executed .slice-half.right { transform: translateX(40px) rotate(10deg); }
+        .cut-executed .fountain-core { transform: translate(-50%, -50%) scale(1); animation: heavyPulse 1s infinite alternate 0.8s; }
+
+        /* =========================================
+           PAGE 5: VINTAGE POLAROID GALLERY DECK
+        ============================================ */
+        .deck-wrapper {
+            width: 100%;
+            margin: auto 0 10px 0;
+            position: relative;
+        }
+        .polaroid-scroller {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 20px 45px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .polaroid-scroller::-webkit-scrollbar { display: none; }
+
+        .polaroid-card {
+            flex: 0 0 220px;
+            background: white;
+            padding: 14px 14px 45px 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            scroll-snap-align: center;
+            transform: scale(0.92) rotate(-3deg);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: grayscale(30%) brightness(0.9);
+        }
+        .polaroid-card.focused {
+            transform: scale(1.06) rotate(2deg);
+            box-shadow: 0 25px 45px rgba(214, 90, 127, 0.25);
+            filter: grayscale(0%) brightness(1);
+        }
+        .polaroid-img {
+            width: 100%;
+            height: 210px;
+            background: #fafafa;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #eee;
+        }
+
+        .scroll-indicator-bar {
+            font-size: 0.8rem;
+            color: var(--luxury-rose);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .parchment-letter {
+            background: var(--glass-white);
+            border-radius: 24px;
+            padding: 16px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .parchment-letter p {
+            color: var(--deep-plum);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* =========================================
+           PAGE 6: FLOATING CELESTIAL STICKERS
+        ============================================ */
+        .constellation-space {
+            position: relative;
+            width: 100%;
+            height: 55%;
+            margin: auto 0;
+        }
+        .celestial-node {
+            position: absolute;
+            background: var(--glass-white);
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            animation: orbitalFloat 4s ease-in-out infinite alternate;
+        }
+
+        /* =========================================
+           PAGE 7: THE STARRY NIGHT FINALE LETTER
+        ============================================ */
+        .constellation-card {
+            background: white;
+            border: 3px double #d65a7f;
+            border-radius: 36px;
+            padding: 35px 22px;
+            width: 100%;
+            box-shadow: var(--premium-shadow);
+            margin: auto 0;
+            position: relative;
+            text-align: center;
+        }
+        .constellation-card::before {
+            content: '✦ ✨ ✦ ✨ ✦';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 2px 20px;
+            font-size: 0.85rem;
+            color: var(--luxury-rose);
+        }
+        .badge-crown {
+            font-size: 3.5rem;
+            margin-bottom: 8px;
+            animation: gentleSway 3s ease-in-out infinite;
+        }
+        .constellation-card h2 {
+            font-size: 1.8rem;
+            color: var(--deep-plum);
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .elegant-prose {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #5c4453;
+            font-weight: 500;
+        }
+        .elegant-prose span {
+            display: block;
+            margin-top: 20px;
+            font-weight: 800;
+            color: var(--electric-heart);
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- PREMIUM ANIMATION SYSTEMS --- */
+        @keyframes elegantFloat {
+            0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.2; }
+            100% { transform: translateY(-60px) translateX(20px) rotate(15deg); opacity: 0.7; }
+        }
+        @keyframes heavyPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 4px 6px rgba(255,71,126,0.2)); }
+            100% { transform: scale(1.1); filter: drop-shadow(0 15px 25px rgba(255,71,126,0.4)); }
+        }
+        @keyframes rotateClockwise {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) rotate(-3deg); }
+            50% { transform: scale(1.15) rotate(4deg); }
+        }
+        @keyframes luxurySliceMotion {
+            0% { transform: translate(0,0) rotate(0); }
+            30% { transform: translate(-15px, -30px) rotate(20deg); }
+            70% { transform: translate(-30px, 80px) rotate(-60deg); }
+            100% { transform: translate(-30px, 80px) rotate(-60deg); }
+        }
+        @keyframes orbitalFloat {
+            0% { transform: translateY(0) scale(1) rotate(0deg); }
+            100% { transform: translateY(-20px) scale(1.05) rotate(10deg); }
+        }
+        @keyframes gentleSway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        @keyframes smoothPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="celebrationMusic" loop>
+        <source src="hh.mp3.mpeg" type="audio/mp3">
+    </audio>
+
+    <div class="viewport-wrapper">
+        
+        <div class="sparkle-canvas" id="sparkleCanvas"></div>
+
+        <div class="music-pill" id="musicToggle" onclick="toggleAudio()">🎵</div>
+
+        <div class="page active" id="page1">
+            <div class="header-wrapper">
+                <div class="luxury-title">A Magical Kingdom</div>
+                <div class="luxury-subtitle">Created Exclusively For You</div>
+            </div>
+
+            <div class="glass-hero-card">
+                <h1>HAPPY BIRTHDAY!</h1>
+                <p>Step inside a gorgeous world crafted with infinite love, starry light, and sweet surprises designed just to make you smile. ✨</p>
+                
+                <div class="halo-heart-container">
+                    <div class="halo-ring"></div>
+                    <div class="heart-element">💝</div>
+                </div>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="beginExperience()">Step Inside ✨</button>
+            </div>
+        </div>
+
+        <div class="page" id="page2">
+            <div class="header-wrapper">
+                <div class="luxury-title">Pop The Pastel Cloud</div>
+                <div class="luxury-subtitle">Burst all balloons to unlock the next room</div>
+            </div>
+
+            <div class="balloon-cloud-grid">
+                <div class="cloud-balloon" style="background: #ffccd5; animation-delay: 0s;" onclick="burstFx(this)">🌸</div>
+                <div class="cloud-balloon" style="background: #d8f3dc; animation-delay: 0.3s;" onclick="burstFx(this)">💫</div>
+                <div class="cloud-balloon" style="background: #e8dbfc; animation-delay: 0.6s;" onclick="burstFx(this)">🦄</div>
+                <div class="cloud-balloon" style="background: #feeafa; animation-delay: 0.2s;" onclick="burstFx(this)">🎀</div>
+                <div class="cloud-balloon" style="background: #ccf3f1; animation-delay: 0.8s;" onclick="burstFx(this)">🐣</div>
+                <div class="cloud-balloon" style="background: #fff0f3; animation-delay: 0.5s;" onclick="burstFx(this)">🧸</div>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="navigate(3)">Continue ➔</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="header-wrapper">
+                <div class="luxury-title">The Royal Birthday Cake</div>
+                <div class="luxury-subtitle">Infinite layers of premium sweetness</div>
+            </div>
+
+            <div class="bakery-theater">
+                <div class="glow-wick"><div class="magical-flame"></div></div>
+                <div class="sculpted-tier layer-top"><div class="velvet-drip"></div></div>
+                <div class="sculpted-tier layer-mid"><div class="velvet-drip"></div></div>
+                <div class="sculpted-tier layer-base"><div class="velvet-drip"></div></div>
+                <div class="pastry-pedestal"></div>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="navigate(4)">Take The Blade 🔪</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="header-wrapper">
+                <div class="luxury-title">Slice Open The Layer</div>
+                <div class="luxury-subtitle">Tap the handle to release the interior core</div>
+            </div>
+
+            <div class="bakery-theater" id="sliceWorkspace">
+                <div class="interactive-cutter" id="cakeKnife" onclick="performSlice()">✨🔪</div>
+
+                <div class="slice-workspace">
+                    <div class="fountain-core">💖💥</div>
+                    
+                    <div class="slice-half left">
+                        <div class="frosting-line"></div>
+                        <h3>CELEBRATE</h3>
+                    </div>
+                    <div class="slice-half right">
+                        <div class="frosting-line"></div>
+                        <h3>CELEBRATE</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="navigate(5)">Read Gallery ➔</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="header-wrapper">
+                <div class="luxury-title">Your Timeless Captures</div>
+                <div class="luxury-subtitle">Swipe across the vintage gallery frame</div>
+            </div>
+
+            <div class="deck-wrapper">
+                <div class="polaroid-scroller" id="filmScroller" onscroll="trackFocus()">
+                    <div class="polaroid-card focused">
+                        <img class="polaroid-img" src="one.jpg" alt="Angel Capture 1">
+                    </div>
+                    <div class="polaroid-card">
+                        <img class="polaroid-img" src="two.jpg" alt="Angel Capture 2">
+                    </div>
+                    <div class="polaroid-card">
+                        <img class="polaroid-img" src="three.jpg" alt="Angel Capture 3">
+                    </div>
+                    <div class="polaroid-card">
+                        <img class="polaroid-img" src="three.jpg" alt="Angel Capture 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator-bar">← Pull across cards →</div>
+
+            <div class="parchment-letter">
+                <p>"May your beautiful universe always remain bright, blissful, and completely magical. Wishing you infinite smiles and reasons to stay endlessly happy!"</p>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="navigate(6)">Next Vault ✨</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="header-wrapper">
+                <div class="luxury-title">The Fantasy Sanctuary</div>
+                <div class="luxury-subtitle">Cute spirits floating in midair orbit</div>
+            </div>
+
+            <div class="constellation-space">
+                <div class="celestial-node" style="top: 5%; left: 8%; animation-delay: 0s;">🧸</div>
+                <div class="celestial-node" style="top: 15%; right: 10%; animation-delay: 0.5s;">🐰</div>
+                <div class="celestial-node" style="top: 42%; left: 38%; animation-delay: 0.2s;">✨🧚‍♀️✨</div>
+                <div class="celestial-node" style="bottom: 15%; left: 12%; animation-delay: 0.8s;">🦄</div>
+                <div class="celestial-node" style="bottom: 8%; right: 14%; animation-delay: 0.3s;">🐱</div>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="navigate(7)">birthday note </button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="constellation-card">
+                <div class="badge-crown">👑👑</div>
+                <h2>HAPPY BIRTHDAY!</h2>
+                <p class="elegant-prose">
+                    Today is a spectacular celebration of the light, happiness, and beauty you radiate every single day. You bring an absolute breath of freshness, magic, and boundless joy into this universe.
+                    <br><br>
+                    May your future steps always be guided by bright pastel skies, warm hugs, and radiant laughter. Never stop shining your gorgeous soul, because you are an absolute angel.
+                    <span>Endlessly Cherished! 🎀💖</span>
+                </p>
+            </div>
+
+            <div class="footer-action">
+                <button class="action-pill" onclick="resetParty()" style="background: rgba(74,40,64,0.1); border: none; font-size: 0.9rem; padding: 12px 30px;">Replay Magic 🔄</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let step = 1;
+        const track = document.getElementById('celebrationMusic');
+        const audioBtn = document.getElementById('musicToggle');
+
+        // Generates interactive premium sparkle particle grid across background canvas
+        function igniteSparkles() {
+            const canvas = document.getElementById('sparkleCanvas');
+            const elements = ['✨', '🌸', '💫', '🤍', '⭐'];
+            for(let i=0; i<20; i++) {
+                let item = document.createElement('div');
+                item.className = 'glitter-particle';
+                item.innerText = elements[Math.floor(Math.random() * elements.length)];
+                item.style.left = Math.random() * 100 + '%';
+                item.style.top = Math.random() * 100 + '%';
+                item.style.animationDelay = Math.random() * 5 + 's';
+                item.style.fontSize = (Math.random() * 0.6 + 0.9) + 'rem';
+                canvas.appendChild(item);
+            }
+        }
+        igniteSparkles();
+
+        // Activates background contextual audio framework
+        function beginExperience() {
+            track.play().then(() => {
+                audioBtn.classList.add('playing');
+            }).catch(err => console.log("Audio pipeline lock bypass active: ", err));
+            navigate(2);
+        }
+
+        // Handles manual pause and replay audio streams
+        function toggleAudio() {
+            if (track.paused) {
+                track.play();
+                audioBtn.classList.add('playing');
+            } else {
+                track.pause();
+                audioBtn.classList.remove('playing');
+            }
+        }
+
+        // Global Page Navigation Engine (Sequential Stack Sequence)
+        function navigate(targetStep) {
+            const activePage = document.getElementById(`page${step}`);
+            const targetPage = document.getElementById(`page${targetStep}`);
+
+            if (activePage && targetPage) {
+                activePage.classList.remove('active');
+                activePage.classList.add('previous');
+                
+                targetPage.classList.add('active');
+                step = targetStep;
+
+                if (targetStep === 5) {
+                    setTimeout(() => {
+                        const scroller = document.getElementById('filmScroller');
+                        scroller.scrollLeft = 0;
+                        trackFocus();
+                    }, 150);
+                }
+            }
+        }
+
+        // Advanced Balloon Pop Trigger Effects with Auto-Advance Engine
+        function burstFx(element) {
+            // Guard loop to ensure a balloon cannot be burst twice
+            if (element.classList.contains('popped')) return;
+            
+            element.classList.add('popped');
+            
+            if(window.AudioContext || window.webkitAudioContext) {
+                let ctx = new (window.AudioContext || window.webkitAudioContext)();
+                let osc = ctx.createOscillator();
+                let gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(600, ctx.currentTime);
+                osc.exponentialRampToValueAtTime(1100, ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.12, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.08);
+            }
+
+            // Real-time tracking check to see if all balloons are popped
+            const totalBalloons = document.querySelectorAll('.cloud-balloon').length;
+            const poppedBalloons = document.querySelectorAll('.cloud-balloon.popped').length;
+
+            if (poppedBalloons === totalBalloons) {
+                // Smooth delay allows final burst animation frame to resolve gracefully
+                setTimeout(() => {
+                    navigate(3);
+                }, 600);
+            }
+        }
+
+        // Cake Slice State Triggers
+        function performSlice() {
+            document.getElementById('sliceWorkspace').classList.add('cut-executed');
+        }
+
+        // Vintage Card Focus Interpolator Tracker
+        function trackFocus() {
+            const scroller = document.getElementById('filmScroller');
+            const cards = scroller.querySelectorAll('.polaroid-card');
+            const midpoint = scroller.getBoundingClientRect().left + (scroller.offsetWidth / 2);
+
+            cards.forEach(card => {
+                const cardMid = card.getBoundingClientRect().left + (card.offsetWidth / 2);
+                if (Math.abs(midpoint - cardMid) < 120) {
+                    card.classList.add('focused');
+                } else {
+                    card.classList.remove('focused');
+                }
+            });
+        }
+
+        // Complete Web Architecture Soft Reset System
+        function resetParty() {
+            document.querySelectorAll('.page').forEach(p => {
+                p.classList.remove('active', 'previous');
+            });
+            document.getElementById('sliceWorkspace').classList.remove('cut-executed');
+            document.querySelectorAll('.cloud-balloon').forEach(b => b.classList.remove('popped'));
+            
+            step = 1;
+            document.getElementById('page1').classList.add('active');
+        }
+    </script>
+</body>
+</html>
